@@ -1,0 +1,83 @@
+body{
+    color: #0c101e;
+    background-image: linear-gradient(to left, #dbecff, #c2ddfb, #c3defd);
+}
+
+/* ////////////////  NAVBAR///////////// */
+
+
+.navbar{
+    background-image: linear-gradient(to left, #1b2343,#151b33,#0c101e);
+}
+nav ul li{
+    color:#dbecff;
+}
+.menuitems a{
+    color: #dbecff;
+ } 
+ .menu::after{
+     background: rgba(255,173,0,255);
+ }
+
+/* HEMBURGER */
+.burger .line {
+    background-color: #dbecff;
+}
+
+  /* light and dark mode */
+.dark-mode-input {
+    color: #dbecff;
+}
+
+/* ////////////////////HOME PAGE */
+
+.myname{
+    color: rgba(255,173,0,255);
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>BUTTONS<<<<<<<<<<<<<<<<<<<<< */
+.home-text button,
+.aboutleft button,
+.contact_page button{
+    background-color: rgba(255,173,0,255);
+}
+.home-text button:hover,
+.aboutleft button:hover,
+.contact_page button:hover{
+    border: 3px solid rgba(255,173,0,255);
+}
+/* //////////////////////BUTTONS TEXT */
+.buttonsText{
+    color: black;
+}
+.buttonsText:hover{
+    color: #dbecff;
+}
+
+
+  
+  .cursor {
+    background-color: #0c101e;
+  }
+  
+  
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>ABOUT PAGE<<<<<<<<<<<<<<<<<<<<<< */
+
+
+
+
+/* >>>>>>>>EDUCATION<<<<<<<<<<<< */
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>PROJECTS<<<<<<<<<<<<<<<<<<< */
+  .wrapper i{
+    background: #dedbdb;
+  }
+
+  .wrapper i:hover{
+    background: rgba(172, 170, 170, 0.9);
+    transition: 0.3s ease-in-out;
+  }

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KumkumPortfolio</title>
+    
+    <link rel="stylesheet" href="darkMode.css" id="theme-style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <nav class="navbar background" id="navbar">
+        <div class="leftnav">
+            <h2 class="greet">PORTFOLIO</h2>          
+        </div>
+        <div class="rightnav">
+            <div class="menuitems" id="menuitems">
+             <ul>
+                <li><a class="menu" href="#home">Home</a></li>
+                <li><a class="menu" href="#about-me">About</a></li>
+                <li><a class="menu" href="#educations">Educations</a></li>
+                <li><a class="menu" href="#skill">Skills</a></li>
+                <!-- <li><a class="menu" href="#achievement">Achievements</a></li> -->
+                <li><a class="menu" href="#project">Projects</a></li>
+                <li><a class="menu" href="#contact">Contact</a></li>
+             </ul>
+             <div class="darkLightMode"  id="darkLightMode">
+                 <div class="lightMode" id="lightMode">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                      <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                   </svg>
+                 </div>
+                 <div class="darkMode" id="lightMode">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                     <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                     <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+                   </svg>
+                 </div>
+              </div>
+            </div>         
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="closeicon" id="closeicon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+            </div>
+        </div>
+ 
+    </nav>
+
+
+    <section class="home" id="home">
+        <div class="home-area">
+          <div class="home-text">
+            <h1>Hi,</h1>
+            <h1>I'm <span class="myname">Kumkum Kumari</span></h1>
+            <p><span class="typing"></span><span class="cursor"></span></p>
+            <div>
+              <button class="home-button"><a href="#about-me"><span class="buttonsText">About me</span></a></button>
+            </div>
+          </div>
+          <div class="homeright">
+            <img src="assets/BGpng.png" alt="">
+          </div>
+        </div>
+      </section>
+      
+
+
+    <section class="about" id="about-me">
+        <div>
+            <h3 class="heading headings" >About me</h3>
+        </div>
+        <div class="information">
+            <div class="aboutleft">
+                <p class="aboutheading">Front-end web Developer </p>
+                <p class="information-text">Hello, My name is Kumkum. I am a self motivated person and very enthusiastic for working with new people and new technologies.
+                    I am from Mechanical background but currently, I am exploring into web development and graphic designing.
+                    I am determined to give my best at everything that I will be assigned to.
+                </p>
+                <div>
+                    <button class="myResume"><a> <span class="buttonsText">Download CV</span> </a></button>
+                </div>
+            </div>
+            <div class="aboutright">
+                 <img src="assets/personalwebpic.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="experience">
+        <div>
+            <h3 class="heading">Experience</h3>
+        </div>        
+    </section>         -->
+ 
+    <section class="educations" id="educations">
+        <div>
+            <h2 class="heading headings" >Educations</h2>
+        </div>
+        <div class="cards">
+                    <div class="card">
+                           <img src="assets/graduation.png" alt="">
+                          <h3 class="title">College</h3>
+                          <p>University College Of Engineering And Technology, VBU</p>
+                         <div class="card-body">
+                            <div class="card-title">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Stream: Mechanical  </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Percentage: 79.4 %  </span>  
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Passing Year: 2022</span>
+                              </div>
+                         </div>
+                    </div>                    
+
+                    <div class="card">
+                        <img src="assets/growth1.png" alt="">
+                          <h3 class="title">Class XII</h3>
+                          <p>Munam Public School, MaharajGang, Barhi, Hazaribagh</p>
+                         <div class="card-body">
+                            <div class="card-title">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Stream: Science </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Percentage: 59.2 %  </span>  
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Passing Year: 2018</span>
+                              </div>
+                         </div>
+                     </div>
+                
+                    <div class="card">
+                        <img src="assets/growth-svgrepo-com.svg" alt="">
+                          <h3 class="title">Class X</h3>
+                          <p>Government Girls +2 High School, Hazaribagh</p>
+                          <div class="card-body">
+                              <div class="card-title">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Stream: General</span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Percentage: 76.4 %  </span>  
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg> Passing Year: 2016</span>
+                              </div>
+                          </div>
+                     </div>
+        </div>
+    </section> 
+
+    <section class="skill" id="skill">
+        <div>
+            <h3 class="heading headings" >Skills</h3>
+        </div>
+        <div class="myskill">
+            <div class="skills ">
+                <div class="leftskills">
+                  <img class="skillimg" src="assets/java-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>Java</h3>
+                    <div class="starrating">
+                      <img src="assets/star.png" alt="">
+                      <img src="assets/star.png" alt="">
+                      <img src="assets/star.png" alt="">
+                      <!-- <img src="assets/star.png" alt=""> -->
+                      <img src="assets/rating.png" alt="">
+                </div>
+            </div>
+            <div class="skills ">
+                <div class="leftskills">
+                  <img src="assets/javascript-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>JavaScript</h3>
+                    <div class="starrating">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <!-- <img src="assets/star.png" alt=""> -->
+                        <img src="assets/rating.png" alt="">
+                </div>
+            </div>
+            <div class="skills ">
+                <div class="leftskills">
+                  <img src="assets/html5-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>HTML</h3>
+                    <div class="starrating">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/rating.png" alt="">
+                </div>
+            </div>
+            <div class="skills ">
+                <div class="leftskills">
+                  <img src="assets/css-3-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>CSS</h3>
+                    <div class="starrating">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/rating.png" alt="">
+                </div>
+            </div>
+            <div class="skills ">
+                <div class="leftskills">
+                  <img src="assets/java-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>DSA</h3>
+                    <div class="starrating">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <!-- <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt=""> -->
+                        <img src="assets/rating.png" alt="">
+                </div>
+            </div>
+            <div class="skills ">
+                <div class="leftskills">
+                  <img src="assets/react-svgrepo-com.svg" alt="">
+                </div>
+                <div. class="rightskils">
+                    <h3>ReactJS</h3>
+                    <div class="starrating">
+                        <img src="assets/star.png" alt="">
+                        <!-- <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/star.png" alt="">
+                        <img src="assets/rating.png" alt=""> -->
+                </div>
+            </div>
+ 
+        </div>
+        <div class="codingpractice">
+            <div class="codingprofile">
+                <div class="box">
+                    <div class="boxleft">
+                        <a href="https://leetcode.com/user5941an/" class="coding-icon">
+                             <img src="https://www.svgrepo.com/show/306328/leetcode.svg" alt="Leetcode">
+                          </a>
+                    </div>
+                    <div class="boxright">
+                        <a href="https://leetcode.com/user5941an/" class="coding-icon">
+                            <h3>leetcode</h3>
+                         </a>
+                    </div>
+                </div>
+                <div class="box">
+                   <div class="boxleft">
+                    <a href="https://www.hackerrank.com/kumkum_haz" class="coding-icon">
+                        <img src="assets/hackerrank-svgrepo-com.svg" alt="">  
+                    </a>
+                </div>
+                <div class="boxright">
+                    <a href="https://www.hackerrank.com/kumkum_haz" class="coding-icon">
+                         <h3> Hackerrank</h3>
+                    </a>
+                   </div>
+                </div>
+                <div class="box">
+                    <div class="boxleft">
+                        <a href="https://auth.geeksforgeeks.org/user/kumkumhaz/" class="coding-icon" >
+                         <img src="https://img.icons8.com/color/1x/GeeksforGeeks.png" alt="geeksforgeeks">
+                        </a>
+                    </div>
+                    <div class="boxright">
+                        <a href="https://auth.geeksforgeeks.org/user/kumkumhaz/" class="coding-icon" >
+                            <h3> Geeksforgeeks</h3> &nbsp;
+                           </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxleft">
+                        <a href="https://www.codingninjas.com/studio/profile/kumkumkumari" class="coding-icon c-i4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/59/59118.png" alt="interviewbit">
+                        </a>
+                    </div>
+                    <div class="boxright">
+                        <a href="https://www.codingninjas.com/studio/profile/kumkumkumari" class="coding-icon c-i4">
+                           <h3>Coding Ninja</h3>&nbsp;
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxleft">
+                        <a href="https://www.interviewbit.com/profile/kumkum-kumari" class="coding-icon c-i4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/59/59118.png" alt="interviewbit">
+                        </a>
+                    </div>
+                    <div class="boxright">
+                        <a href="https://www.interviewbit.com/profile/kumkum-kumari" class="coding-icon c-i4">
+                           <h3> InterviewBit</h3>&nbsp;
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section> 
+
+    <!-- <section class="achievement" id="achievement">
+        <div>
+            <h3 class="heading" >Achievements</h3>
+        </div>
+        <div class="cards">
+            <a href="#">
+                <div class="card">
+                    <div class="card-body">
+                      <h3 class="title">Internshala</h3>
+                      <p>Completed a 6-week online training on Core Java and scored 94% marks in the final assessment by InternShala.</p>
+                      <div class="card-title">
+                      </div>
+                    </div>
+                 </div>
+            </a>
+        </div>
+    </section>     -->
+
+
+
+
+    <section class="project" id="project">
+        <div>
+            <h3 class="heading headings" >Projects</h3>
+        </div>
+        <div class="projects" id="projects">
+          <div class="projectbody">
+             <div class="projectss">
+                <img src="assets/portfolioss.png" alt="">
+             </div>                    
+             <div class="projectlayer">
+                <h3>My Portfolio</h3>
+                <p>My personal portfolio website showcasing my work, built using HTML, CSS, and JavaScript.</p>
+                <a href="https://kumkumkumariportfolio.netlify.app/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg></a>
+             </div>
+          </div>
+          <div class="projectbody">
+              <div class="projectss">
+                  <img src="assets/Note App SS.png" alt="">
+                </div>                    
+                <div class="projectlayer">
+                    <h3>Note Taking App </h3>
+                    <p>Designed and developed a note taking app using HTML, CSS, and JavaScript.</p>
+                    <a href="https://kumkumhaz.github.io/Note-Taking-app/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                    </svg></a>
+                </div>
+            </div>
+            <div class="projectbody">
+                <div class="projectss">
+                   <img src="assets/recipe a[pp.png" alt="">
+                </div>                    
+                <div class="projectlayer">
+                   <h3>Recipe Website</h3>
+                   <p>Designed and developed a recipe website using HTML, CSS, and JavaScript. </p>
+                   <a href="https://recipewebsitekk.netlify.app/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                       <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                       <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                     </svg></a>
+                </div>
+             </div>
+          
+         
+         
+          <div class="projectbody">
+             <div class="projectss">
+                <img src="assets/calculator ss.png" alt="">
+             </div>                    
+             <div class="projectlayer">
+                <h3>Calculator</h3>
+                <p>Designe and developed a basic calculator using HTML, CSS and JavaScript. </p>
+                <a href="https://kumkumhaz.github.io/Calculator/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg></a>
+             </div>
+          </div>
+          <div class="projectbody">
+            <div class="projectss">
+               <img src="assets/Whack-a-Mole.png" alt="">
+            </div>                    
+            <div class="projectlayer">
+               <h3>Game</h3>
+               <p>Designed and developed Whack-a-Mole game using HTML, CSS and JavaScript. </p>
+               <a href="https://kumkumhaz.github.io/Whack-a-Mole-Game/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                   <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                   <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                 </svg></a>
+            </div>
+         </div>
+          <div class="projectbody">
+             <div class="projectss">
+                <img src="assets/mytodoappss.png" alt="">
+             </div>                    
+             <div class="projectlayer">
+                <h3>To Do List</h3>
+                <p>Designe and developed to-do list portfolio using HTML, CSS and JavaScript. </p>
+                <a href="https://kumkumhaz.github.io/Todo-app/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg></a>
+             </div>
+          </div>
+          <div class="projectbody">
+             <div class="projectss">
+                <img src="assets/plastationcloness.jpeg" alt="">
+             </div>                    
+             <div class="projectlayer">
+                <h3>Clone</h3>
+                <p>Replicated the layout and design of the official PlayStation website using HTML and CSS.</p>
+                <a href="https://playstationclonekk.netlify.app/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg></a>
+             </div>
+          </div>
+        </div>
+</section>
+   
+
+      
+ 
+
+    <section class="contact"  id="contact">
+        <div class="contact_page">
+         <div class="contactLeft">
+            <div>
+                <h3 class=" heading contactheading">Contact Me</h3>
+            </div>  
+            <div class="gmail">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                    <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                    <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                </svg> <a href="kumkum.haz@gmail.com">
+                    <span> kumkum.haz@gmail.com</span>
+                  </a>
+            </div>
+            <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg> <span> Hazaribagh, Jharkhand, 825301</span>
+            </div>
+            <div class="contact_logo" >
+                <a href="https://www.linkedin.com/in/kumkum-kumari-47394a1a1/" class="contact-icon">
+                    <img src="assets/linkedin-icon-2-logo-svgrepo-com.svg" alt=""> 
+               </a>
+               <a href="https://github.com/kumkumhaz" class="contact-icon">
+                <img src="assets/github-color-svgrepo-com.svg" alt="">
+               </a>
+               <a href="https://www.instagram.com/kumkumhaz_/?igshid=ZDdkNTZiNTM%3D" class="contact-icon">
+                   <img src="assets/instagram-svgrepo-com.svg" alt="">
+               </a>
+               <a href="https://www.facebook.com/profile.php?id=100053068943246" class="contact-icon">
+              <img src="assets/facebook-color-svgrepo-com.svg" alt="">
+               </a>
+             </div>
+             <div>
+                <a href="KUMKUM KUMARI.RESUME.pdf" download>
+                    <button class="myResume"> <span  class="buttonsText" >Download CV</span> <a></a></button>
+                </a>
+            </div>
+            </div>
+           
+           <div class="contactRight"> 
+            <form action="" name="submit-to-google-sheet">
+                <input type="text" class="yourName" name="Name" placeholder="Your Name" required>
+                <input type="text" class="yourMail" name="Email" placeholder="Your Mail" required>
+                <textarea  class="yourMsg" name="Message" id="yourMsg" rows="4" placeholder="Your Message"></textarea>
+                <button class="myResume submitForm" type="submit"> <span  class="buttonsText">Submit</span> <a></a></button>
+            </form>
+           </div>
+        </div> 
+        <div class="messagesuccess" id="messagesuccess"></div>   
+    </section>   
+    <footer class="footer">
+        <p>Copyright © 2023 Kumkum Kumari Portfolio</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script>
+
+      </script>
+</body>
+</html>
