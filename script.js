@@ -6,21 +6,62 @@ let darkMode = document.getElementsByClassName("darkMode")[0];
 const toggleThemeButton = document.getElementById('darkLightMode');
 const themeStyle = document.getElementById('theme-style');
 const menuitems = document.querySelector('.menuitems');
+const burger = document.querySelector('.burger');
+const closeicon = document.getElementById('closeicon');
+const navbar = document.querySelector('.navbar');
 
 
-// function switchTheme(theme) {
-//   if (theme === 'light') {
-//     themeStyle.setAttribute('href', 'lightMode.css');
-//     lightMode.style.display = 'block';
-//     darkMode.style.display = 'none';
-//     menuitems.style.display = "none";
-//   } else {
-//     themeStyle.setAttribute('href', 'darkMode.css');
-//     lightMode.style.display = 'none';
-//     darkMode.style.display = 'block';
-//     menuitems.style.display = "none";
-//   }
-// }
+// hemburger
+
+let menuOpen = false;
+
+function showMenuItems() {
+  console.log("menuitem open")
+  menuitems.style.display = "block";
+  closeicon.style.display = "block";
+  burger.style.display = "none";
+  menuOpen = true;
+}
+
+function closeMenuItems() {
+  console.log("menuitem close")
+
+  menuitems.style.display = "none";
+  closeicon.style.display = "none";
+  burger.style.display = "block";
+  menuOpen = false;
+}
+
+console.log(burger);
+console.log(closeicon);
+
+burger.addEventListener("click", showMenuItems);
+closeicon.addEventListener("click", closeMenuItems);
+
+// Scroll to section and then hide menu items
+menuitems.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const targetSectionId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetSectionId);
+
+    if (window.innerWidth <= 1000) {
+      // If window width is 1000px or less, close menu items after clicking
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        closeMenuItems();
+      }
+    } else {
+      // If window width is greater than 1000px, just scroll to the section
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+
 
 function switchTheme(theme) {
   if (window.innerWidth <= 1000) {
@@ -62,53 +103,6 @@ if (storedTheme) {
 } else {
   switchTheme('dark');
 }
-
-// hemburger
-
-const burger = document.querySelector('.burger');
-const closeicon = document.getElementById('closeicon');
-const navbar = document.querySelector('.navbar');
-let menuOpen = false;
-
-function showMenuItems() {
-  menuitems.style.display = "block";
-  closeicon.style.display = "block";
-  burger.style.display = "none";
-  menuOpen = true;
-}
-
-function closeMenuItems() {
-  menuitems.style.display = "none";
-  closeicon.style.display = "none";
-  burger.style.display = "block";
-  menuOpen = false;
-}
-
-burger.addEventListener("click", showMenuItems);
-closeicon.addEventListener("click", closeMenuItems);
-
-// Scroll to section and then hide menu items
-menuitems.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
-
-    const targetSectionId = link.getAttribute('href');
-    const targetSection = document.querySelector(targetSectionId);
-
-    if (window.innerWidth <= 1000) {
-      // If window width is 1000px or less, close menu items after clicking
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        closeMenuItems();
-      }
-    } else {
-      // If window width is greater than 1000px, just scroll to the section
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-});
 
 
 
