@@ -60,15 +60,21 @@ closeicon.addEventListener("click", closeMenuItems);
 // Scroll to section and then hide menu items
 menuitems.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default link behavior
 
     const targetSectionId = link.getAttribute('href');
     const targetSection = document.querySelector(targetSectionId);
 
     if (window.innerWidth <= 1000) {
+      // If window width is 1000px or less, close menu items after clicking
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
         closeMenuItems();
+      }
+    } else {
+      // If window width is greater than 1000px, just scroll to the section
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
   });
