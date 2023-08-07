@@ -35,6 +35,40 @@ if (storedTheme) {
 }
 
 // hemburger
+// const burger = document.querySelector('.burger');
+// const menuitems = document.querySelector('.menuitems');
+// const closeicon = document.getElementById('closeicon');
+// const navbar = document.querySelector('.navbar');
+// let menuOpen = false;
+
+// function showMenuItems() {
+//   menuitems.style.display = "block";
+//   closeicon.style.display = "block";
+//   burger.style.display = "none";
+//   menuOpen = true;
+// }
+
+// function closeMenuItems() {
+//   menuitems.style.display = "none";
+//   closeicon.style.display = "none";
+//   burger.style.display = "block";
+//   menuOpen = false;
+// }
+
+// burger.addEventListener("click", showMenuItems);
+
+// // close hemburger
+// closeicon.addEventListener("click", closeMenuItems);
+
+// // Event listener to close menu items when clicking outside (only if menu items are open)
+// document.addEventListener("click", function (event) {
+//   const target = event.target;
+//   if (menuOpen && !menuitems.contains(target) && target !== burger && !burger.contains(target)) {
+//     closeMenuItems();
+//   }
+// });
+
+
 const burger = document.querySelector('.burger');
 const menuitems = document.querySelector('.menuitems');
 const closeicon = document.getElementById('closeicon');
@@ -57,17 +91,26 @@ function closeMenuItems() {
 
 burger.addEventListener("click", showMenuItems);
 
-// close hemburger
+// Close hamburger menu
 closeicon.addEventListener("click", closeMenuItems);
 
-// Event listener to close menu items when clicking outside (only if menu items are open)
-document.addEventListener("click", function (event) {
-  const target = event.target;
-  if (menuOpen && !menuitems.contains(target) && target !== burger && !burger.contains(target)) {
-    closeMenuItems();
-  }
-});
+// Scroll to section and then hide menu items
+menuitems.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
 
+    const targetSectionId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetSectionId);
+
+    if (window.innerWidth <= 1000) {
+      // If window width is 1000px or less, close menu items after clicking
+      if (targetSection) {
+        // targetSection.scrollIntoView({ behavior: 'smooth' });
+        closeMenuItems();
+      }
+    }
+  });
+});
 
 
 const typingText = document.querySelector('.typing');

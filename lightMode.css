@@ -793,6 +793,9 @@ nav ul li{
     .homeright img{
       width: 100%;
     }
+    .menu:hover::after{
+        display: none;   
+    }
     
     .aboutleft{
        padding-left: 0px;

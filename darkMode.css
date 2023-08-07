@@ -740,6 +740,10 @@ nav ul li{
   .menuitems li{
     margin: 13px 0;
   }
+  .menu:hover::after{
+    display: none;   
+}
+
    nav ul{
     display: flex;
     flex-direction: column;
@@ -767,6 +771,7 @@ nav ul li{
   .homeright img{
     width: 100%;
   }
+  
   
   .aboutleft{
      padding-left: 0px;
