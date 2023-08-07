@@ -5,18 +5,49 @@ let lightMode = document.getElementsByClassName("lightMode")[0];
 let darkMode = document.getElementsByClassName("darkMode")[0];
 const toggleThemeButton = document.getElementById('darkLightMode');
 const themeStyle = document.getElementById('theme-style');
+const menuitems = document.querySelector('.menuitems');
+
+
+// function switchTheme(theme) {
+//   if (theme === 'light') {
+//     themeStyle.setAttribute('href', 'lightMode.css');
+//     lightMode.style.display = 'block';
+//     darkMode.style.display = 'none';
+//     menuitems.style.display = "none";
+//   } else {
+//     themeStyle.setAttribute('href', 'darkMode.css');
+//     lightMode.style.display = 'none';
+//     darkMode.style.display = 'block';
+//     menuitems.style.display = "none";
+//   }
+// }
 
 function switchTheme(theme) {
-  if (theme === 'light') {
-    themeStyle.setAttribute('href', 'lightMode.css');
-    lightMode.style.display = 'block';
-    darkMode.style.display = 'none';
+  if (window.innerWidth <= 1000) {
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+      closeMenuItems(); 
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+      closeMenuItems(); 
+    }
   } else {
-    themeStyle.setAttribute('href', 'darkMode.css');
-    lightMode.style.display = 'none';
-    darkMode.style.display = 'block';
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+    }
   }
 }
+
 
 toggleThemeButton.addEventListener('click', () => {
   const currentTheme = themeStyle.getAttribute('href') === 'darkMode.css' ? 'light' : 'dark';
@@ -35,7 +66,6 @@ if (storedTheme) {
 // hemburger
 
 const burger = document.querySelector('.burger');
-const menuitems = document.querySelector('.menuitems');
 const closeicon = document.getElementById('closeicon');
 const navbar = document.querySelector('.navbar');
 let menuOpen = false;
@@ -60,19 +90,26 @@ closeicon.addEventListener("click", closeMenuItems);
 // Scroll to section and then hide menu items
 menuitems.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default link behavior
 
     const targetSectionId = link.getAttribute('href');
     const targetSection = document.querySelector(targetSectionId);
 
     if (window.innerWidth <= 1000) {
+      // If window width is 1000px or less, close menu items after clicking
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
         closeMenuItems();
       }
+    } else {
+      // If window width is greater than 1000px, just scroll to the section
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   });
 });
+
 
 
 const typingText = document.querySelector('.typing');
