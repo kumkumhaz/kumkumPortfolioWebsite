@@ -21,7 +21,6 @@ function switchTheme(theme) {
 toggleThemeButton.addEventListener('click', () => {
   const currentTheme = themeStyle.getAttribute('href') === 'darkMode.css' ? 'light' : 'dark';
   switchTheme(currentTheme);
-  // Save the current theme preference to local storage
   localStorage.setItem('currentTheme', currentTheme);
 });
 
@@ -30,44 +29,10 @@ const storedTheme = localStorage.getItem('currentTheme');
 if (storedTheme) {
   switchTheme(storedTheme);
 } else {
-  // If no theme preference is set, default to dark mode
   switchTheme('dark');
 }
 
 // hemburger
-// const burger = document.querySelector('.burger');
-// const menuitems = document.querySelector('.menuitems');
-// const closeicon = document.getElementById('closeicon');
-// const navbar = document.querySelector('.navbar');
-// let menuOpen = false;
-
-// function showMenuItems() {
-//   menuitems.style.display = "block";
-//   closeicon.style.display = "block";
-//   burger.style.display = "none";
-//   menuOpen = true;
-// }
-
-// function closeMenuItems() {
-//   menuitems.style.display = "none";
-//   closeicon.style.display = "none";
-//   burger.style.display = "block";
-//   menuOpen = false;
-// }
-
-// burger.addEventListener("click", showMenuItems);
-
-// // close hemburger
-// closeicon.addEventListener("click", closeMenuItems);
-
-// // Event listener to close menu items when clicking outside (only if menu items are open)
-// document.addEventListener("click", function (event) {
-//   const target = event.target;
-//   if (menuOpen && !menuitems.contains(target) && target !== burger && !burger.contains(target)) {
-//     closeMenuItems();
-//   }
-// });
-
 
 const burger = document.querySelector('.burger');
 const menuitems = document.querySelector('.menuitems');
@@ -90,22 +55,19 @@ function closeMenuItems() {
 }
 
 burger.addEventListener("click", showMenuItems);
-
-// Close hamburger menu
 closeicon.addEventListener("click", closeMenuItems);
 
 // Scroll to section and then hide menu items
 menuitems.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
+    event.preventDefault();
 
     const targetSectionId = link.getAttribute('href');
     const targetSection = document.querySelector(targetSectionId);
 
     if (window.innerWidth <= 1000) {
-      // If window width is 1000px or less, close menu items after clicking
       if (targetSection) {
-        // targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({ behavior: 'smooth' });
         closeMenuItems();
       }
     }
@@ -122,9 +84,9 @@ function type() {
   if (charIndex < professions[professionIndex].length) {
     typingText.textContent += professions[professionIndex].charAt(charIndex);
     charIndex++;
-    setTimeout(type, 200); // Adjust the typing speed here (milliseconds)
+    setTimeout(type, 200); 
   } else {
-    setTimeout(erase, 2000); // Adjust the delay before erasing (milliseconds)
+    setTimeout(erase, 2000);
   }
 }
 
@@ -132,10 +94,10 @@ function erase() {
   if (charIndex > 0) {
     typingText.textContent = professions[professionIndex].substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(erase, 100); // Adjust the erasing speed here (milliseconds)
+    setTimeout(erase, 100); 
   } else {
     professionIndex = (professionIndex + 1) % professions.length;
-    setTimeout(type, 500); // Adjust the delay before typing the next profession (milliseconds)
+    setTimeout(type, 500); 
   }
 }
 
