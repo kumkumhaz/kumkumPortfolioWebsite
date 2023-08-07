@@ -5,8 +5,8 @@ let lightMode = document.getElementsByClassName("lightMode")[0];
 let darkMode = document.getElementsByClassName("darkMode")[0];
 const toggleThemeButton = document.getElementById('darkLightMode');
 const themeStyle = document.getElementById('theme-style');
-const burger = document.querySelector('.burger');
 const menuitems = document.querySelector('.menuitems');
+const burger = document.querySelector('.burger');
 const closeicon = document.getElementById('closeicon');
 const navbar = document.querySelector('.navbar');
 
@@ -29,14 +29,13 @@ function closeMenuItems() {
   menuOpen = false;
 }
 
+
 burger.addEventListener("click", showMenuItems);
 closeicon.addEventListener("click", closeMenuItems);
 
-// Scroll to section and then hide menu items
 menuitems.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
-
     const targetSectionId = link.getAttribute('href');
     const targetSection = document.querySelector(targetSectionId);
 
@@ -45,22 +44,42 @@ menuitems.querySelectorAll('a').forEach(link => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
         closeMenuItems();
       }
+    } else {
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   });
 });
 
 
+
 function switchTheme(theme) {
-  if (theme === 'light') {
-    themeStyle.setAttribute('href', 'lightMode.css');
-    lightMode.style.display = 'block';
-    darkMode.style.display = 'none';
+  if (window.innerWidth <= 1000) {
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+      closeMenuItems(); 
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+      closeMenuItems(); 
+    }
   } else {
-    themeStyle.setAttribute('href', 'darkMode.css');
-    lightMode.style.display = 'none';
-    darkMode.style.display = 'block';
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+    }
   }
 }
+
 
 toggleThemeButton.addEventListener('click', () => {
   const currentTheme = themeStyle.getAttribute('href') === 'darkMode.css' ? 'light' : 'dark';
@@ -68,13 +87,13 @@ toggleThemeButton.addEventListener('click', () => {
   localStorage.setItem('currentTheme', currentTheme);
 });
 
+// Initial theme setup
 const storedTheme = localStorage.getItem('currentTheme');
 if (storedTheme) {
   switchTheme(storedTheme);
 } else {
   switchTheme('dark');
 }
-
 
 
 
