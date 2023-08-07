@@ -46,21 +46,42 @@ menuitems.querySelectorAll('a').forEach(link => {
         closeMenuItems();
       }
     }
+    else {
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   });
 });
 
 
+
 function switchTheme(theme) {
-  if (theme === 'light') {
-    themeStyle.setAttribute('href', 'lightMode.css');
-    lightMode.style.display = 'block';
-    darkMode.style.display = 'none';
+  if (window.innerWidth <= 1000) {
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+      closeMenuItems(); 
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+      closeMenuItems(); 
+    }
   } else {
-    themeStyle.setAttribute('href', 'darkMode.css');
-    lightMode.style.display = 'none';
-    darkMode.style.display = 'block';
+    if (theme === 'light') {
+      themeStyle.setAttribute('href', 'lightMode.css');
+      lightMode.style.display = 'block';
+      darkMode.style.display = 'none';
+    } else {
+      themeStyle.setAttribute('href', 'darkMode.css');
+      lightMode.style.display = 'none';
+      darkMode.style.display = 'block';
+    }
   }
 }
+
 
 toggleThemeButton.addEventListener('click', () => {
   const currentTheme = themeStyle.getAttribute('href') === 'darkMode.css' ? 'light' : 'dark';
@@ -68,12 +89,15 @@ toggleThemeButton.addEventListener('click', () => {
   localStorage.setItem('currentTheme', currentTheme);
 });
 
+// Initial theme setup
 const storedTheme = localStorage.getItem('currentTheme');
 if (storedTheme) {
   switchTheme(storedTheme);
 } else {
   switchTheme('dark');
 }
+
+
 
 
 
