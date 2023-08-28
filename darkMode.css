@@ -105,17 +105,17 @@ nav ul li{
     cursor: pointer;
 
 }  
-.closeicon{
-    margin-right: 40px;
-    margin-top: 8px;
-    display: none;
-    cursor: pointer;
-}
 .burger .line {
     width: 20px;
     background-color: #dbecff;
     height: 2px;
     margin: 2px 2px;
+}
+.closeicon{
+    margin-right: 40px;
+    margin-top: 8px;
+    display: none;
+    cursor: pointer;
 }
 .darkLightMode{
     display: flex;
